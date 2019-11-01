@@ -1,0 +1,19 @@
+mat-card{
+    background-image: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    color: rgb(233, 221, 221);
+    margin: auto;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+    color: rgb(233, 221, 221) !important;
+}
+
+::ng-deep .mat-form-field-label{
+    color: rgb(233, 221, 221) !important;   
+}
+::ng-deep .mat-form-field-underline {
+    color: rgb(233, 221, 221) !important;
+} 
+  
+::ng-deep .mat-form-field-ripple {
+    color: rgb(233, 221, 221) !important;;
+}

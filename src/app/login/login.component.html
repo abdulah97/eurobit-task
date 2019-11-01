@@ -1,0 +1,17 @@
+<mat-card style="width: 20%; border-radius:10px;display: block; margin:auto; margin-top:15%"> Enter your login credentials here
+  <br>
+  <br>
+  <mat-divider style="background-color:rgb(233, 221, 221);"></mat-divider>
+  <br>
+  <form class="example-form">
+    <mat-form-field style="display: block;" class="example-full-width">
+      <input matInput placeholder="Username">
+    </mat-form-field>
+    <mat-form-field style="display: block;" class="example-full-width">
+      <input matInput placeholder="Password">
+    </mat-form-field>
+    <br>
+    <button (click)="onRegisterClick()" mat-button style="float:right; bottom:25px; border-radius: 5px;">Register</button>
+    <button type="submit" mat-button style="float:right; bottom:25px; border-radius: 5px">Log in</button>
+  </form>
+</mat-card>

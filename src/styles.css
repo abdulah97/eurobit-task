@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { 
+    height: 100%; 
+}
+body { 
+    background: url('./app/background-image/background.jpg');
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

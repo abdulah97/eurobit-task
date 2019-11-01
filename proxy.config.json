@@ -1,0 +1,6 @@
+{
+    "/":{
+        "target":"http://ebit-front-test.herokuapp.com",
+        "secure": false
+    }
+}
