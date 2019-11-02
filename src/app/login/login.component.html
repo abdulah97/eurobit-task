@@ -1,17 +1,23 @@
-<mat-card style="width: 20%; border-radius:10px;display: block; margin:auto; margin-top:15%"> Enter your login credentials here
+<mat-card style="width: 20%; border-radius:10px;display: block; margin:auto; margin-top:10%"> Enter your login credentials here
   <br>
   <br>
   <mat-divider style="background-color:rgb(233, 221, 221);"></mat-divider>
   <br>
   <form (ngSubmit)="attemptLogin(loginForm.value, $event)" [formGroup]="loginForm" class="example-form">
     <mat-form-field style="display: block;" class="example-full-width">
-      <input matInput placeholder="Username" formControlName="username">
-    </mat-form-field>
-    <mat-form-field style="display: block;" class="example-full-width">
-      <input matInput placeholder="Password" formControlName="password">
+      <input matInput type="username" placeholder="Username" formControlName="username">
+      <mat-hint style="color: rgb(233, 221, 221);">Min 6 characters</mat-hint>
     </mat-form-field>
     <br>
-    <button (click)="onRegisterClick()" mat-button style="float:right; bottom:25px; border-radius: 5px;">Register</button>
-    <button type="submit" mat-button style="float:right; bottom:25px; border-radius: 5px">Log in</button>
+    <mat-form-field style="display: block;" class="example-full-width">
+      <input matInput type="password" placeholder="Password" formControlName="password">
+      <mat-hint style="color: rgb(233, 221, 221);">Min 6 characters</mat-hint>
+    </mat-form-field>
+    <br>
+    <button type="submit" [disabled]="!loginForm.valid" (keyup.enter)="attemptLogin(loginForm.value, $event)" mat-button style="float:right; border-radius: 5px">Log in</button>
+    <button (click)="onRegisterClick()" mat-button style="float:right; border-radius: 5px;">Register</button>
   </form>
+  <br>
+  <br>
+
 </mat-card>

@@ -1,18 +1,22 @@
-<mat-card style="width: 20%; border-radius:10px;display: block; margin:auto; margin-top:15%"> Fill this form to register
+<mat-card style="width: 20%; border-radius:10px;display: block; margin:auto; margin-top:10%"> Fill this form to register
   <br>
   <br>
   <mat-divider style="background-color:rgb(233, 221, 221);"></mat-divider>
   <br>
   <form (ngSubmit)="registerUser(registerForm.value)" [formGroup]="registerForm" class="example-form">
     <mat-form-field style="display: block;" class="example-full-width">
-      <input matInput placeholder="Username" formControlName="username">
-    </mat-form-field>
-    <mat-form-field style="display: block;" class="example-full-width">
-      <input matInput placeholder="Password" formControlName="password">
+      <input matInput type="username" placeholder="Username" formControlName="username">
+      <mat-hint style="color: rgb(233, 221, 221); float: right">Min 6 characters</mat-hint>
     </mat-form-field>
     <br>
-    <button type="submit" mat-button style="float:right; bottom:25px; border-radius: 5px">Register</button>
+    <mat-form-field style="display: block;" class="example-full-width">
+      <input matInput type="password" placeholder="Password" formControlName="password">
+      <mat-hint style="color: rgb(233, 221, 221); float: right">Min 6 characters</mat-hint>
+    </mat-form-field>
+    <br>
+    <button type="submit" [disabled]="!registerForm.valid" mat-button style="float:right; border-radius: 5px">Register</button>
   </form>
-  <button (click)="navigateToLogin()" mat-button style="float:right; bottom:25px; border-radius: 5px;">Return to login</button>
-
+  <button (click)="navigateToLogin()" mat-button style="float:right; border-radius: 5px;">Return to login</button>
+  <br>
+  <br>
 </mat-card>

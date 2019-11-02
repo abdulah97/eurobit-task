@@ -9,5 +9,6 @@ body {
     margin: 0; 
     font-family: Roboto, "Helvetica Neue", sans-serif; 
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-position: 0 0;
+    background-size: cover;
 }
