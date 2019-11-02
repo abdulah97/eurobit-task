@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from './core/login/service/login.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(private router: Router) { }
-
+  constructor(private router: Router, private loginService: LoginService) { }
+  public isLoggedIn(): boolean {
+    if (localStorage.getItem('auth_token') === null){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
   navigate(url){
     this.router.navigateByUrl(url);
   }

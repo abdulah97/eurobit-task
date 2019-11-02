@@ -40,8 +40,9 @@ export class LoginService {
   }
 
   public logOut(): void {
-    localStorage.clear();
     this.router.navigateByUrl('login')
+    localStorage.removeItem('auth_token');
+
   }
 
   public isLoggedIn(): boolean {

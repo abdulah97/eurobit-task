@@ -3,6 +3,7 @@
   <button style="position: relative; left: 30px; border-radius: 5px;" mat-button>Home</button>
   <button style="position: relative; left: 30px; border-radius: 5px" mat-button>New</button>
   <button style="position: relative; left: 30px; border-radius: 5px" mat-button>Another</button>
+  <button *ngIf="isLoggedIn()" (click)=" this.loginService.logOut();" style="position: relative; left: 30px; border-radius: 5px" mat-button>Log out</button>
 
 </mat-toolbar>
   <router-outlet></router-outlet>
