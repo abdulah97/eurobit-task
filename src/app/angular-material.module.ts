@@ -10,7 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
-import { MatNativeDateModule, MatToolbar, MatToolbarModule, MatButtonModule, MatCardModule, MatDividerModule } from '@angular/material';
+import { MatNativeDateModule, MatToolbar, MatToolbarModule, MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, MatSnackBarModule, MatDialogModule } from '@angular/material';
 
 const modules: any[] = [
 
@@ -28,7 +28,10 @@ const modules: any[] = [
     MatNativeDateModule,
     MatToolbarModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatDialogModule
 ];
 
 @NgModule({

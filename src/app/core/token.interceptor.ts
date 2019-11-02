@@ -14,7 +14,6 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(public auth: LoginService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
     if (localStorage.getItem('auth_token') !== null) {
       request = request.clone({
         setHeaders: {

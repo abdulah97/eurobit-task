@@ -7,9 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './angular-material.module';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { BudgetComponent } from './budget/budget.component';
+import { AuthGuard } from './core/auth.guard';
+import { TokenInterceptor } from './core/token.interceptor';
+import { IgxTreeGridModule } from 'igniteui-angular';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,18 @@ import { BudgetComponent } from './budget/budget.component';
     AppRoutingModule,
     AngularMaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    IgxTreeGridModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

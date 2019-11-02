@@ -1,0 +1,36 @@
+::ng-deep .modal .mat-dialog-container {
+    color:white; 
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+}
+::ng-deep .mat-focused .mat-form-field-label {
+    color: rgb(233, 221, 221) !important;
+}
+
+::ng-deep .mat-form-field-label{
+    color: rgb(233, 221, 221) !important;   
+}
+::ng-deep .mat-form-field-underline {
+    color: rgb(233, 221, 221) !important;
+} 
+  
+::ng-deep .mat-form-field-ripple {
+    color: rgb(233, 221, 221) !important;;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+::ng-deep .snackbar button{
+    color: white;
+    background: transparent;
+    border-radius: 10px;
+}
+::ng-deep .snackbar {
+    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    border-radius: 10px;
+}
+.grid_wrapper{
+    margin-left: 50px;
+}
