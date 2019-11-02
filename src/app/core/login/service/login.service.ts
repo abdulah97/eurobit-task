@@ -6,6 +6,8 @@ import {Observable, Subject, throwError} from 'rxjs';
 import {JwtHelperService} from 'node_modules/@auth0/angular-jwt'
 import { AuthToken } from 'src/app/user/auth.token';
 import { Account } from 'src/app/user/account';
+import { LoginRequest } from '../model/login-request';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +15,14 @@ import { Account } from 'src/app/user/account';
 
 export class LoginService {
   private loginUrl = 'http://ebit-front-test.herokuapp.com/login';
-  
   jwtHelper = new JwtHelperService();
   refreshTokenInProcess = false;
   logoutSubject = new Subject();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  attemptLogin(account: Account): Observable<AuthToken> {
-    return this.http.post<AuthToken>( this.loginUrl, account).pipe(
+  attemptLogin(request: LoginRequest): Observable<AuthToken> {
+    return this.http.post<AuthToken>( this.loginUrl, request).pipe(
       catchError(this.handleError)
     );
   }
@@ -40,6 +41,7 @@ export class LoginService {
 
   public logOut(): void {
     localStorage.clear();
+    this.router.navigateByUrl('login')
   }
 
   public isLoggedIn(): boolean {

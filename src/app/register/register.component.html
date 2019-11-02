@@ -11,7 +11,8 @@
       <input matInput placeholder="Password" formControlName="password">
     </mat-form-field>
     <br>
-    <button mat-button style="float:right; bottom:25px; border-radius: 5px;">Return to login</button>
     <button type="submit" mat-button style="float:right; bottom:25px; border-radius: 5px">Register</button>
   </form>
+  <button (click)="navigateToLogin()" mat-button style="float:right; bottom:25px; border-radius: 5px;">Return to login</button>
+
 </mat-card>

@@ -3,12 +3,12 @@
   <br>
   <mat-divider style="background-color:rgb(233, 221, 221);"></mat-divider>
   <br>
-  <form class="example-form">
+  <form (ngSubmit)="attemptLogin(loginForm.value, $event)" [formGroup]="loginForm" class="example-form">
     <mat-form-field style="display: block;" class="example-full-width">
-      <input matInput placeholder="Username">
+      <input matInput placeholder="Username" formControlName="username">
     </mat-form-field>
     <mat-form-field style="display: block;" class="example-full-width">
-      <input matInput placeholder="Password">
+      <input matInput placeholder="Password" formControlName="password">
     </mat-form-field>
     <br>
     <button (click)="onRegisterClick()" mat-button style="float:right; bottom:25px; border-radius: 5px;">Register</button>

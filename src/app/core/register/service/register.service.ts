@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { catchError, tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { throwError} from 'rxjs';
 import { RegisterRequest } from '../model/register-request';
 
@@ -14,8 +14,7 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   registerUser(request: RegisterRequest) {
-    const headers = new HttpHeaders({ 'Content-Type': 'text/plain'});
-    return this.http.post<RegisterRequest>(this.registerUrl, request, {headers}).pipe(
+    return this.http.post<RegisterRequest>(this.registerUrl, request).pipe(
       catchError(this.handleError)
     );
   }

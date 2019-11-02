@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from '../core/register/service/register.service';
 import { RegisterRequest } from '../core/register/model/register-request';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,13 +13,13 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private registerService: RegisterService) { }
+  constructor(private registerService: RegisterService, private router: Router) { }
 
   ngOnInit() {
     this.initForms();
   }
 
-  private initForms() {
+  initForms() {
     this.registerForm = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(30), this.noWhitespaceValidator]),
       password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(30), this.noWhitespaceValidator])
@@ -43,5 +44,8 @@ export class RegisterComponent implements OnInit {
     const isWhitespace = (control.value || '').trim().length === 0;
     const isValid = !isWhitespace;
     return isValid ? null : { 'whitespace': true };
+  }
+  navigateToLogin(){
+    this.router.navigateByUrl('/login');
   }
 }
