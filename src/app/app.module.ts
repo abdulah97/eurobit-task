@@ -13,6 +13,7 @@ import { BudgetComponent } from './budget/budget.component';
 import { AuthGuard } from './core/auth.guard';
 import { TokenInterceptor } from './core/token.interceptor';
 import { IgxTreeGridModule } from 'igniteui-angular';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { IgxTreeGridModule } from 'igniteui-angular';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    BudgetComponent
+    BudgetComponent,
+    TransactionComponent
   ],
   imports: [
     HttpClientModule,

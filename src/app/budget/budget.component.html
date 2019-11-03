@@ -34,25 +34,50 @@
 <div style="margin-top: 20px; margin-left:50px">
   <igx-tree-grid style="overflow-x: hidden; overflow-y: auto;" childDataKey="children" [autoGenerate]="false" [data]="localData" width="80%" height="400px"
     [paging]="true" [showToolbar]="true" toolbarTitle="Portfolios">
-    <igx-column field="name" header="Budget name" dataType="string" width="30%" sortable="true" [resizable]="true">
+    <igx-column field="name" header="Budget name" dataType="string" width="20%" sortable="true" [resizable]="true">
       <ng-template igxCell let-cell="cell">
-          {{ cell.rowData.name }}
+        {{ cell.rowData.name }}
       </ng-template>
     </igx-column>
     <igx-column field="amount" header="Amount" dataType="string" width="20%" sortable="true">
-        <ng-template igxCell let-cell="cell">
-          {{ cell.rowData.amount }}
-        </ng-template>
+      <ng-template igxCell let-cell="cell">
+        {{ cell.rowData.amount }}
+      </ng-template>
     </igx-column>
     <igx-column field="date_from" header="Start Date" dataType="date" width="20%" sortable="true" >
-        <ng-template igxCell let-cell="cell">
-          {{ cell.rowData.date_from | date: 'dd/MM/yyyy'}}
-        </ng-template>
+      <ng-template igxCell let-cell="cell">
+        {{ cell.rowData.date_from | date: 'dd/MM/yyyy'}}
+      </ng-template>
     </igx-column>
-    <igx-column field="date_to" header="End date" dataType="date" width="30%" sortable="true">
-        <ng-template igxCell let-cell="cell">
-          Nema
-        </ng-template>
+    <igx-column field="date_to" header="End date" dataType="date" width="20%" sortable="true">
+      <ng-template igxCell let-cell="cell">
+        None
+      </ng-template>
     </igx-column>
+    <igx-column field="id" header="New transaction" dataType="string" width="20%" sortable="false">
+      <ng-template igxCell let-cell="cell">
+        <button (click)="openModal(addTransactionModal); setSelectedBudget(cell.rowData.id);" mat-button style="border-radius: 10px; color: rgb(48,170,149);">
+          <mat-icon>add</mat-icon>
+        </button>
+      </ng-template>
+  </igx-column>
   </igx-tree-grid>
 </div>
+
+<ng-template #addTransactionModal>
+  <form (ngSubmit)="addTransaction(transactionForm.value)" [formGroup]="transactionForm">
+    <mat-form-field style="display: block;">
+      <input type="number" matInput placeholder="Amount" formControlName="amount">
+    </mat-form-field>
+    <mat-form-field style="display: block;">
+      <input matInput placeholder="Description" formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field style="display: block;">
+      <input matInput placeholder="Type (optional)" formControlName="type">
+    </mat-form-field>
+
+    <button type="submit" [disabled]="!transactionForm.valid" mat-button style="float:right; border-radius: 5px">Create transaction</button>
+  </form>
+  <button (click)="onCancelModal()" mat-button style="float:right; border-radius: 5px;">Cancel</button>
+</ng-template>

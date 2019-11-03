@@ -4,6 +4,8 @@ import { BudgetService } from '../core/budget/service/budget.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BudgetRequest } from '../core/budget/model/budget-request';
 import {CustomDateFormat} from '../core/custom-date-format';
+import { TransactionRequest } from '../core/transaction/model/transaction-request';
+import { TransactionService } from '../core/transaction/service/transaction.service';
 
 
 @Component({
@@ -13,6 +15,8 @@ import {CustomDateFormat} from '../core/custom-date-format';
 })
 export class BudgetComponent implements OnInit {
 
+  selectedBudgetId: any;
+  transactionForm: FormGroup;
   minEndDate: Date = new Date();
   budgetForm: FormGroup;
   localData: any;
@@ -21,8 +25,8 @@ export class BudgetComponent implements OnInit {
   };
   constructor(private snackBar: MatSnackBar, 
     private budgetService: BudgetService,
-    private dialog: MatDialog
-    ) { }
+    private dialog: MatDialog,
+    private transactionService: TransactionService) { }
 
   ngOnInit() {
     this.initForms();
@@ -36,7 +40,11 @@ export class BudgetComponent implements OnInit {
       date_from: new FormControl('', [Validators.required]),
       date_to: new FormControl ('', [Validators.required])
     })
-    
+    this.transactionForm = new FormGroup({
+      amount: new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(30)]),
+      description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(100), this.noWhitespaceValidator]),
+      type: new FormControl ('', [])
+    })
   }
   
   initBudgets(){
@@ -70,10 +78,36 @@ export class BudgetComponent implements OnInit {
       },
       () => {
         this.dialog.closeAll();
-        this.openSnackBar('Budget added successfully!', 'Close')
+        this.openSnackBar('Budget added successfully!', 'Close');
       }
     );
   }
+  addTransaction(transactionFormValue){
+    const transaction: TransactionRequest = {
+      amount: transactionFormValue.amount,
+      description: transactionFormValue.description,
+      budget: this.selectedBudgetId,
+      type: transactionFormValue.type
+    }
+    this.transactionService.createTransaction(transaction).subscribe(
+      (data: any) => {
+        this.localData = data;
+      },
+      (err) => {
+        console.error(JSON.stringify(err));
+      },
+      () => {
+        this.dialog.closeAll();
+        this.initBudgets();
+        this.openSnackBar('Transaction created successfully!', 'Close')
+      }
+    );
+  }
+
+  setSelectedBudget(id){
+    this.selectedBudgetId = id;
+  }
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 3000,
