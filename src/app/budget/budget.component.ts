@@ -78,6 +78,7 @@ export class BudgetComponent implements OnInit {
       },
       () => {
         this.dialog.closeAll();
+        this.initBudgets();
         this.openSnackBar('Budget added successfully!', 'Close');
       }
     );

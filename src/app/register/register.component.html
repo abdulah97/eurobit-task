@@ -5,7 +5,7 @@
   <br>
   <form (ngSubmit)="registerUser(registerForm.value)" [formGroup]="registerForm" class="example-form">
     <mat-form-field style="display: block;">
-      <input matInput type="username" placeholder="Username" formControlName="username">
+      <input matInput type="text" placeholder="Username" formControlName="username">
       <mat-hint style="color: rgb(233, 221, 221); float: right">Min 6 characters</mat-hint>
     </mat-form-field>
     <br>

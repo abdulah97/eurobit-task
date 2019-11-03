@@ -58,7 +58,24 @@ input[type=number]::-webkit-outer-spin-button {
 ::ng-deep .igx-grid-paginator {
     border-bottom-left-radius: 10px !important;
     border-bottom-right-radius: 10px !important;
+    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    color: white;
 }
 ::ng-deep .igx-grid-toolbar, .igx-grid-toolbar--cosy, .igx-grid-toolbar--compact {
     display: none;
+}
+::ng-deep .igx-grid__thead-thumb {
+    background: rgb(53, 184, 144);
+    border-top-right-radius: 10px;
+}
+::ng-deep select  {
+    border-radius: 5px;
+    background: linear-gradient(to right, rgb(36,138,159) , rgb(37,142,158));
+    color:white;
+}
+
+::ng-deep select option  {
+    border-radius: 5px;
+    background-color: rgb(41,150,156);
+    color:white;
 }
