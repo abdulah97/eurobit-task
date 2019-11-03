@@ -39,17 +39,17 @@
           {{ cell.rowData.name }}
       </ng-template>
     </igx-column>
-    <igx-column field="startDate" header="Amount" dataType="string" width="20%" sortable="true">
+    <igx-column field="amount" header="Amount" dataType="string" width="20%" sortable="true">
         <ng-template igxCell let-cell="cell">
           {{ cell.rowData.amount }}
         </ng-template>
     </igx-column>
-    <igx-column field="endDate" header="Start Date" dataType="date" width="20%" sortable="true" >
+    <igx-column field="date_from" header="Start Date" dataType="date" width="20%" sortable="true" >
         <ng-template igxCell let-cell="cell">
           {{ cell.rowData.date_from }}
         </ng-template>
     </igx-column>
-    <igx-column field="projectName" header="End date" dataType="date" width="30%" sortable="true">
+    <igx-column field="date_to" header="End date" dataType="date" width="30%" sortable="true">
         <ng-template igxCell let-cell="cell">
           Nema
         </ng-template>

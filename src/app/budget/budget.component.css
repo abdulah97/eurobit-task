@@ -44,11 +44,12 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
 }
 ::ng-deep .igx-grid__tbody-content {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 ::ng-deep .igx-grid__thead-wrapper, .igx-grid__tfoot {
     color: white !important;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
 }
 ::ng-deep .igx-grid__th--fw, .igx-grid__td--fw {
