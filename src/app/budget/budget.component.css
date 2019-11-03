@@ -34,3 +34,30 @@ input[type=number]::-webkit-outer-spin-button {
 .grid_wrapper{
     margin-left: 50px;
 }
+::ng-deep .igx-grid__tbody-message {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    color:white;
+}
+::ng-deep .igx-grid__tfoot {
+    display: none;
+}
+::ng-deep .igx-grid__tbody-content {
+}
+::ng-deep .igx-grid__thead-wrapper, .igx-grid__tfoot {
+    color: white !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+}
+::ng-deep .igx-grid__th--fw, .igx-grid__td--fw {
+    background: transparent;
+}
+::ng-deep .igx-grid-paginator {
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+::ng-deep .igx-grid-toolbar, .igx-grid-toolbar--cosy, .igx-grid-toolbar--compact {
+    display: none;
+}

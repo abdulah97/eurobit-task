@@ -1,5 +1,6 @@
 mat-toolbar{
     font-style: italic;
+    font-family: 'Titillium Web', sans-serif;
     border-radius: 10px;
     background-image: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
     color: rgb(233, 221, 221);

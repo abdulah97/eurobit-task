@@ -31,13 +31,12 @@
   <button (click)="onCancelModal()" mat-button style="float:right; border-radius: 5px;">Cancel</button>
 </ng-template>
 
-<div class="grid_wrapper">
+<div style="margin-top: 20px; margin-left:50px">
   <igx-tree-grid style="overflow-x: hidden; overflow-y: auto;" childDataKey="children" [autoGenerate]="false" [data]="localData" width="80%" height="400px"
     [paging]="true" [showToolbar]="true" toolbarTitle="Portfolios">
     <igx-column field="name" header="Budget name" dataType="string" width="30%" sortable="true" [resizable]="true">
       <ng-template igxCell let-cell="cell">
-        <button mat-button>
-          {{ cell.rowData.name }}</button>
+          {{ cell.rowData.name }}
       </ng-template>
     </igx-column>
     <igx-column field="startDate" header="Amount" dataType="string" width="20%" sortable="true">
@@ -52,7 +51,7 @@
     </igx-column>
     <igx-column field="projectName" header="End date" dataType="date" width="30%" sortable="true">
         <ng-template igxCell let-cell="cell">
-          {{ cell.rowData.date_to }}
+          Nema
         </ng-template>
     </igx-column>
   </igx-tree-grid>
