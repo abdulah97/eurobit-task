@@ -46,7 +46,7 @@
     </igx-column>
     <igx-column field="date_from" header="Start Date" dataType="date" width="20%" sortable="true" >
         <ng-template igxCell let-cell="cell">
-          {{ cell.rowData.date_from }}
+          {{ cell.rowData.date_from | date: 'dd/MM/yyyy'}}
         </ng-template>
     </igx-column>
     <igx-column field="date_to" header="End date" dataType="date" width="30%" sortable="true">
