@@ -2,7 +2,7 @@
 <mat-toolbar>EasyFinances  
   <mat-icon style="margin-left:10px;">euro_symbol</mat-icon>
   <button *ngIf="isLoggedIn()" (click)="navigate('/home')"  style="position: relative; left: 30px; border-radius: 5px;" mat-button>Home</button>
-  <button *ngIf="isLoggedIn()" (click)="navigate('/budget')" style="position: relative; left: 30px; border-radius: 5px" mat-button>My budgets</button>
+  <button *ngIf="isLoggedIn()" (click)="navigate('/budget')" style="position: relative; left: 30px; border-radius: 5px" mat-button>Budgets</button>
   <button *ngIf="isLoggedIn()" (click)="navigate('/transaction')" style="position: relative; left: 30px; border-radius: 5px" mat-button>Transactions</button>
   <button *ngIf="isLoggedIn()" (click)=" this.loginService.logOut();" style="position: relative; left: 30px; border-radius: 5px" mat-button>Log out</button>
 

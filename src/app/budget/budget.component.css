@@ -1,7 +1,7 @@
 ::ng-deep .modal .mat-dialog-container {
     color:rgb(233, 221, 221);
     border-radius: 10px;
-    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    background: linear-gradient(to right, rgb(28,115,168) , rgb(42,154,154));
 }
 ::ng-deep .mat-focused .mat-form-field-label {
     color: rgb(233, 221, 221) !important;

@@ -124,6 +124,7 @@ export class BudgetComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.budgetForm.reset();
+      this.transactionForm.reset();
     });
   }
 

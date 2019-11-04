@@ -38,9 +38,17 @@ export class RegisterComponent implements OnInit {
     },
       (err) => {
         console.log(err)
+        if(err === (200)){
+          this.navigateToLogin();
+          this.openSnackBar('Registration successful!', 'Close')
+        }
+        else{
+          this.openSnackBar('Something went wrong, try a different username.', 'Close')
+        }
+
       },
       () => {
-        this.navigateToLogin();
+        
         this.openSnackBar('User registered successfully!', 'Close');
       }
     );

@@ -6,6 +6,7 @@ import { Account } from '../user/account';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { LoginRequest } from '../core/login/model/login-request';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-login',
@@ -17,8 +18,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   account: Account;
   jwtHelper = new JwtHelperService;
-  validCredentials = true;
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor(private router: Router, private loginService: LoginService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.initForms();
@@ -45,12 +46,18 @@ export class LoginComponent implements OnInit {
       },
       (err) => {
         console.error(JSON.stringify(err));
-        this.validCredentials = false;
+        this.openSnackBar('Wrong username or password','Close')
       },
       () => {
         this.router.navigate(['']);
       }
     );
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+      panelClass: 'snackbar',
+    });
   }
   onRegisterClick(){
     this.router.navigateByUrl('/register');
