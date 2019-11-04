@@ -10,7 +10,7 @@ import { BudgetRequest } from '../model/budget-request';
   providedIn: 'root'
 })
 export class BudgetService {
-  private url = 'http://ebit-front-test.herokuapp.com/budget';
+  private url = 'https://cors-anywhere.herokuapp.com/http://ebit-front-test.herokuapp.com/budget';
 
   constructor(private http: HttpClient) { }
 

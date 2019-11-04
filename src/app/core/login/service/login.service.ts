@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 
 export class LoginService {
-  private loginUrl = 'http://ebit-front-test.herokuapp.com/login';
+  private loginUrl = 'https://cors-anywhere.herokuapp.com/http://ebit-front-test.herokuapp.com/login';
   jwtHelper = new JwtHelperService();
   refreshTokenInProcess = false;
   logoutSubject = new Subject();

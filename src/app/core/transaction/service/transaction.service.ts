@@ -10,7 +10,7 @@ import { TransactionRequest } from '../model/transaction-request';
   providedIn: 'root'
 })
 export class TransactionService {
-  private url = 'http://ebit-front-test.herokuapp.com/transaction';
+  private url = 'https://cors-anywhere.herokuapp.com/http://ebit-front-test.herokuapp.com/transaction';
 
   constructor(private http: HttpClient) { }
 

@@ -4,14 +4,15 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError} from 'rxjs';
 import { RegisterRequest } from '../model/register-request';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
-  private registerUrl = 'http://ebit-front-test.herokuapp.com/register';
+  private registerUrl = 'https://cors-anywhere.herokuapp.com/http://ebit-front-test.herokuapp.com/register';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   registerUser(request: RegisterRequest) {
     return this.http.post<RegisterRequest>(this.registerUrl, request).pipe(
