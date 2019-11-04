@@ -1,5 +1,5 @@
 ::ng-deep .modal .mat-dialog-container {
-    color:white; 
+    color:rgb(233, 221, 221);
     border-radius: 10px;
     background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
 }
@@ -23,7 +23,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 ::ng-deep .snackbar button{
-    color: white;
+    color: rgb(233, 221, 221);
     background: transparent;
     border-radius: 10px;
 }
@@ -38,7 +38,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
-    color:white;
+    color:rgb(233, 221, 221);
 }
 ::ng-deep .igx-grid__tfoot {
     display: none;
@@ -48,7 +48,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-bottom-right-radius: 10px;
 }
 ::ng-deep .igx-grid__thead-wrapper, .igx-grid__tfoot {
-    color: white !important;
+    color: rgb(233, 221, 221);
     border-top-left-radius: 10px;
     background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
 }
@@ -58,6 +58,8 @@ input[type=number]::-webkit-outer-spin-button {
 ::ng-deep .igx-grid-paginator {
     border-bottom-left-radius: 10px !important;
     border-bottom-right-radius: 10px !important;
+    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    color: rgb(233, 221, 221);
 }
 ::ng-deep .igx-grid-toolbar, .igx-grid-toolbar--cosy, .igx-grid-toolbar--compact {
     display: none;
@@ -65,4 +67,51 @@ input[type=number]::-webkit-outer-spin-button {
 ::ng-deep .igx-grid__thead-thumb {
     background: rgb(53, 184, 144);
     border-top-right-radius: 10px;
+}
+::ng-deep select  {
+    border-radius: 5px;
+    background: linear-gradient(to right, rgb(36,138,159) , rgb(37,142,158));
+    color:rgb(233, 221, 221);
+}
+
+::ng-deep select option  {
+    border-radius: 5px;
+    background-color: rgb(41,150,156);
+    color:rgb(233, 221, 221);
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background: none;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+    right: 12px;
+    position: relative;
+    top: 10px;
+}
+::ng-deep .mat-form-field:not(.mat-form-field-appearance-legacy) 
+.mat-form-field-suffix .mat-icon-button {
+    position: relative;
+    top:10px;
+}
+::ng-deep .mat-datepicker-content .mat-calendar {
+    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    color:rgb(233, 221, 221);
+}
+::ng-deep .modal .mat-dialog-container {
+    margin-top:100px;
+}
+
+::ng-deep .mat-datepicker-content {
+    position: relative;
+    top:50px;
+}
+::ng-deep .mat-calendar-body-cell-content {
+    color: rgb(233, 221, 221);
+}
+::ng-deep .mat-calendar-body-label {
+    color:rgb(233, 221, 221);
+}
+::ng-deep .mat-calendar-table-header th {
+    color: rgb(233, 221, 221);
 }
