@@ -1,0 +1,21 @@
+<mat-card style="width: 25%; border-radius:10px;display: block; margin:auto; margin-top:5%; font-family: 'Titillium Web', sans-serif;"> Fill this form to register
+  <br>
+  <br>
+  <mat-divider style="background-color:rgb(233, 221, 221);"></mat-divider>
+  <br>
+  <form (ngSubmit)="registerUser(registerForm.value)" [formGroup]="registerForm" class="example-form">
+    <mat-form-field style="display: block;">
+      <input matInput type="text" placeholder="Username" formControlName="username">
+      <mat-hint style="color: rgb(233, 221, 221); float: right">Min 6 characters</mat-hint>
+    </mat-form-field>
+    <br>
+    <mat-form-field style="display: block;">
+      <input matInput style="font-family: Arial, Helvetica, sans-serif;" type="password" placeholder="Password" formControlName="password">
+      <mat-hint style="color: rgb(233, 221, 221); float: right">Min 6 characters</mat-hint>
+    </mat-form-field>
+    <br>
+    <button type="submit" [disabled]="!registerForm.valid" mat-button style="float:right; border-radius: 5px">Register</button>
+  </form>
+  <button (click)="navigateToLogin()" mat-button style="float:right; border-radius: 5px;">Return to login</button>
+  <br>
+</mat-card>
