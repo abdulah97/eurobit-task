@@ -1,5 +1,5 @@
 mat-card{
-    background-image: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    background: linear-gradient(to right, rgb(24,104,172) , rgb(42,154,154));
     color: rgb(233, 221, 221);
     margin: auto;
 }
@@ -16,4 +16,13 @@ mat-card{
   
 ::ng-deep .mat-form-field-ripple {
     color: rgb(233, 221, 221) !important;;
+}
+::ng-deep .snackbar button{
+    color: rgb(233, 221, 221);
+    background: transparent;
+    border-radius: 10px;
+}
+::ng-deep .snackbar {
+    background: linear-gradient(to right, rgb(13, 75, 182) , rgb(53, 184, 144));
+    border-radius: 10px;
 }

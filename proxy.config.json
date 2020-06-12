@@ -1,6 +1,0 @@
-{
-    "/register": {
-      "target": "http://ebit-front-test.herokuapp.com/register",
-      "secure": false
-    }
-  }
